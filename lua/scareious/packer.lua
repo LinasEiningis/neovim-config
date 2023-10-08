@@ -58,4 +58,22 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  use {
+      'mfussenegger/nvim-dap'
+  }
+
+  use {
+      'mxsdev/nvim-dap-vscode-js'
+  }
+
+  use {
+      "microsoft/vscode-js-debug",
+      opt = true,
+      run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
+  }
+
+  use { 
+      "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} 
+  }
+
 end)
